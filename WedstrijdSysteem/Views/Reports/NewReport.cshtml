@@ -1,0 +1,32 @@
+﻿@model WedstrijdSysteem.Models.MatchReportViewModel
+@{
+    ViewData["Title"] = "New Match";
+}
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="NewMatchReportAdded">
+                    <h4>Create a new match report.</h4>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Report"></label>
+                        <textarea asp-for="Report" class="form-control" style="height: 425px;" /></textarea>
+                        <span asp-validation-for="Report" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="button button-wide">Make</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

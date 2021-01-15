@@ -1,0 +1,32 @@
+﻿@using Logic
+@{
+    ViewBag.Title = "Report";
+}
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-12">
+            <div>
+                <h1>@ViewBag.MatchReport.Title</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="col-md-12">
+            <h2>Report:</h2>
+            <div>
+                <p>@ViewBag.MatchReport.Report</p>
+            </div>
+        </div>
+
+        <form method="post" asp-action="UpdateFullReport" asp-route-id="@ViewBag.MatchReport.Id">
+            <button type="submit" class="button button-wide">Change</button>
+        </form>
+
+        <form method="post" asp-action="DeleteReport" asp-route-id="@ViewBag.MatchReport.Id">
+            <button type="submit" class="button button-wide">Delete</button>
+        </form>
+    </div>
+
+</body>

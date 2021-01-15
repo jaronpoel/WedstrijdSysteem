@@ -1,0 +1,19 @@
+﻿@model WedstrijdSysteem.Models.AllMatchReportsViewModel
+@using Logic;
+@{
+    ViewData["Title"] = "New Report";
+}
+
+    <body class="ViewShoppinglists"> <!-- nog aanpassen de class name-->
+        <!-- Overzicht met de matchreports -->
+        <div class="container">
+            <div class="row">
+                <div class="row justify-content-md-center">
+                    @foreach (MatchReport matchreport in Model.ListOfMatchReports)
+                    {
+                        <a class="col-md-auto matchReportOversight" asp-action="SingleReport" asp-route-id="@matchreport.Id" asp-controller="Reports"><div class="matchreport"><p>Report van: @matchreport.Title</p></div></a>
+                    }
+                </div>
+            </div>
+        </div>
+    </body>
